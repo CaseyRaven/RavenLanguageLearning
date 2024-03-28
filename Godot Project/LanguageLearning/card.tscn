@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c31rt7gi2gjd"]
+
+[ext_resource type="Script" path="res://Scripts/CardScript.cs" id="1_7cerf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uw842"]
+resource_local_to_scene = true
+size = Vector3(1, 2, 2)
+
+[node name="Card" type="Node3D"]
+script = ExtResource("1_7cerf")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uw842")
+
+[node name="FaceText0" type="Label3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.01)
+text = "Sample"
+
+[node name="FaceText5" type="Label3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.01, 0)
+text = "Sample"
+
+[node name="FaceText4" type="Label3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.01, 0)
+text = "Sample"
+
+[node name="FaceText2" type="Label3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, -1.01)
+text = "Sample"

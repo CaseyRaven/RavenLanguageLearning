@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=3 format=3 uid="uid://cu08tjtofyg5t"]
+
+[ext_resource type="Script" path="res://Scripts/BookData.cs" id="1_5usow"]
+[ext_resource type="Resource" uid="uid://dmsdkoao601pr" path="res://Pages/SamplePage.tres" id="1_j1st4"]
+
+[resource]
+script = ExtResource("1_5usow")
+pages = Array[Object]([ExtResource("1_j1st4"), ExtResource("1_j1st4"), ExtResource("1_j1st4")])

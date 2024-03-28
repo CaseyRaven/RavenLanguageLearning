@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://bstl1smhkweoi"]
+
+[ext_resource type="Script" path="res://Scripts/CardData.cs" id="1_w7e4q"]
+
+[resource]
+script = ExtResource("1_w7e4q")
+word = ""
+type = 2
+faces = null
+maxStage = 0
+variants = PackedStringArray()
+translations = PackedStringArray()
+faceSize = Vector2i(0, 0)
