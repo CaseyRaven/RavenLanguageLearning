@@ -1,8 +1,24 @@
-[gd_resource type="Resource" script_class="BookData" load_steps=3 format=3 uid="uid://cu08tjtofyg5t"]
+[gd_resource type="Resource" script_class="BookData" load_steps=19 format=3 uid="uid://cu08tjtofyg5t"]
 
 [ext_resource type="Script" path="res://Scripts/BookData.cs" id="1_5usow"]
-[ext_resource type="Resource" uid="uid://dmsdkoao601pr" path="res://Pages/SamplePage.tres" id="1_j1st4"]
+[ext_resource type="Resource" uid="uid://goxqm1s8hd3f" path="res://Pages/SamplePage1.tres" id="1_ebe0i"]
+[ext_resource type="Resource" uid="uid://4b0jewp3kh8t" path="res://Pages/SamplePage2.tres" id="2_qai6q"]
+[ext_resource type="Resource" uid="uid://chkknu8n7o2b" path="res://Pages/SamplePage3.tres" id="3_f1tw7"]
+[ext_resource type="Resource" uid="uid://dsdqni3utq4vt" path="res://Pages/SamplePage4.tres" id="4_lrb7s"]
+[ext_resource type="Resource" uid="uid://bofxj8wmmva8e" path="res://Pages/SamplePage5.tres" id="5_s47jq"]
+[ext_resource type="Resource" uid="uid://dhw6m2nmxo6rp" path="res://Pages/SamplePage6.tres" id="6_wa1ip"]
+[ext_resource type="Resource" uid="uid://bn08q2xbyhej6" path="res://Pages/SamplePage7.tres" id="7_ubuxq"]
+[ext_resource type="Resource" uid="uid://bkiolvrekfgpi" path="res://Pages/SamplePage8.tres" id="8_bq2vf"]
+[ext_resource type="Resource" uid="uid://wk1kg2ane0o7" path="res://Pages/SamplePage9.tres" id="9_e7wxo"]
+[ext_resource type="Resource" uid="uid://b03eycdt4l3wm" path="res://Pages/SamplePage10.tres" id="10_mrdr5"]
+[ext_resource type="Resource" uid="uid://ksy76njw0chr" path="res://Pages/SamplePage11.tres" id="11_hjcl4"]
+[ext_resource type="Resource" uid="uid://b0rl7quxythhs" path="res://Pages/SamplePage12.tres" id="12_fwbjv"]
+[ext_resource type="Resource" uid="uid://ct5veb48e57lk" path="res://Pages/SamplePage13.tres" id="13_ojpc6"]
+[ext_resource type="Resource" uid="uid://dvtmqg5onrtx3" path="res://Pages/SamplePage14.tres" id="14_qx8tl"]
+[ext_resource type="Resource" uid="uid://tl0o1yq2twfw" path="res://Pages/SamplePage15.tres" id="15_7ayb5"]
+[ext_resource type="Resource" uid="uid://0gh74fd0cj2u" path="res://Pages/SamplePage16.tres" id="16_cuere"]
+[ext_resource type="Resource" uid="uid://bss2rq21xtnvt" path="res://Pages/SamplePage17.tres" id="17_56xad"]
 
 [resource]
 script = ExtResource("1_5usow")
-pages = Array[Object]([ExtResource("1_j1st4"), ExtResource("1_j1st4"), ExtResource("1_j1st4")])
+pages = Array[Object]([ExtResource("1_ebe0i"), ExtResource("2_qai6q"), ExtResource("3_f1tw7"), ExtResource("4_lrb7s"), ExtResource("5_s47jq"), ExtResource("6_wa1ip"), ExtResource("7_ubuxq"), ExtResource("8_bq2vf"), ExtResource("9_e7wxo"), ExtResource("10_mrdr5"), ExtResource("11_hjcl4"), ExtResource("12_fwbjv"), ExtResource("13_ojpc6"), ExtResource("14_qx8tl"), ExtResource("15_7ayb5"), ExtResource("16_cuere"), ExtResource("17_56xad")])

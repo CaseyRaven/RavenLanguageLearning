@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PageData" load_steps=9 format=3 uid="uid://bss2rq21xtnvt"]
+
+[ext_resource type="Script" path="res://Scripts/PageData.cs" id="1_v57nr"]
+[ext_resource type="Resource" uid="uid://d16yulalfw033" path="res://Cards/ZOENAY.tres" id="1_xt7pi"]
+[ext_resource type="Resource" uid="uid://behfqmjbuv56r" path="res://Cards/ZOMBAY.tres" id="2_wkfq7"]
+[ext_resource type="Resource" uid="uid://yr067ak1pvcr" path="res://Cards/KREET.tres" id="3_xxq5d"]
+[ext_resource type="Resource" uid="uid://bstl1smhkweoi" path="res://Cards/Spacer.tres" id="4_ufwhq"]
+[ext_resource type="Resource" uid="uid://b8afb1d8ymk6" path="res://Cards/TOOPLOO.tres" id="5_s6eea"]
+[ext_resource type="Resource" uid="uid://28o70nkaebfy" path="res://Cards/MONTUP.tres" id="6_byqrd"]
+[ext_resource type="Texture2D" uid="uid://mdhsk5tpyxdg" path="res://Panels/SAMPLE-BOOK-PANEL-17.png" id="7_3angi"]
+
+[resource]
+script = ExtResource("1_v57nr")
+cards = Array[Object]([ExtResource("1_xt7pi"), ExtResource("2_wkfq7"), ExtResource("3_xxq5d"), ExtResource("4_ufwhq"), ExtResource("1_xt7pi"), ExtResource("5_s6eea"), ExtResource("6_byqrd")])
+panel = ExtResource("7_3angi")

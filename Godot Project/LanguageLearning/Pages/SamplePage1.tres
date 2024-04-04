@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PageData" load_steps=7 format=3 uid="uid://goxqm1s8hd3f"]
+
+[ext_resource type="Script" path="res://Scripts/PageData.cs" id="1_0a6ns"]
+[ext_resource type="Resource" uid="uid://b8afb1d8ymk6" path="res://Cards/TOOPLOO.tres" id="1_sd2r0"]
+[ext_resource type="Resource" uid="uid://cjaju4lt4muvq" path="res://Cards/KRAGEN.tres" id="2_uw1ai"]
+[ext_resource type="Resource" uid="uid://bstl1smhkweoi" path="res://Cards/Spacer.tres" id="3_6dk3y"]
+[ext_resource type="Resource" uid="uid://28o70nkaebfy" path="res://Cards/MONTUP.tres" id="4_pggur"]
+[ext_resource type="Texture2D" uid="uid://bn4epxe414gp8" path="res://Panels/SAMPLE-BOOK-PANEL-1.png" id="5_gg2nu"]
+
+[resource]
+script = ExtResource("1_0a6ns")
+cards = Array[Object]([ExtResource("1_sd2r0"), ExtResource("2_uw1ai"), ExtResource("3_6dk3y"), ExtResource("1_sd2r0"), ExtResource("4_pggur")])
+panel = ExtResource("5_gg2nu")

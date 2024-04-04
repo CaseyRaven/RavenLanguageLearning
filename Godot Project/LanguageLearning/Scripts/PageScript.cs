@@ -72,6 +72,7 @@ public partial class PageScript : Node3D
 	{
 		pageScene = data.panel;
 		
+		GetNode<TextureRect>("./AspectRatioContainer/TextureRect").Texture = pageScene;
 
 		baseCard = (PackedScene)GD.Load("res://card.tscn");
 

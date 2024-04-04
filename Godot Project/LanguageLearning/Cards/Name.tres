@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_k3rly")
-word = "Casey"
+word = "Binkey"
 type = 1
 storedFaces = null
 faces = null

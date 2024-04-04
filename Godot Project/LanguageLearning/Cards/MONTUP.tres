@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://28o70nkaebfy"]
+
+[ext_resource type="Script" path="res://Scripts/CardData.cs" id="1_io8uh"]
+[ext_resource type="Texture2D" uid="uid://j83yjmejtrk4" path="res://Images/MONTUP-0.png" id="2_cx3lf"]
+[ext_resource type="Texture2D" uid="uid://56fi270udebu" path="res://Images/MONTUP-1.png" id="3_f0wyy"]
+[ext_resource type="Texture2D" uid="uid://dr3o74c8hxe1l" path="res://Images/MONTUP-2.png" id="4_ichmo"]
+[ext_resource type="Texture2D" uid="uid://de85vq7ybr87y" path="res://Images/MONTUP-3.png" id="5_8bjla"]
+[ext_resource type="Texture2D" uid="uid://bmchotitmghc4" path="res://Images/MONTUP-4.png" id="6_7evb5"]
+
+[resource]
+script = ExtResource("1_io8uh")
+word = ""
+type = 0
+storedFaces = Array[Texture2D]([ExtResource("2_cx3lf"), ExtResource("3_f0wyy"), ExtResource("4_ichmo"), ExtResource("5_8bjla"), ExtResource("6_7evb5")])
+faces = Array[Image]([null, null, null, null, null])
+maxStage = 4
+variants = PackedStringArray()
+translations = PackedStringArray()
+faceSize = Vector2i(750, 1500)
+imageFormat = 5

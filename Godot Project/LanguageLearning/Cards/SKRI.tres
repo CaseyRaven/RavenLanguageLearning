@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://byi6m16vcmkf0"]
+
+[ext_resource type="Script" path="res://Scripts/CardData.cs" id="1_nyjhb"]
+[ext_resource type="Texture2D" uid="uid://dk0e2ogktuc38" path="res://Images/SKRI-0.png" id="2_udpvr"]
+[ext_resource type="Texture2D" uid="uid://o61heq6sybyi" path="res://Images/SKRI-1.png" id="3_ak6bw"]
+[ext_resource type="Texture2D" uid="uid://v7nbt0vwoubc" path="res://Images/SKRI-2.png" id="4_jb0ki"]
+[ext_resource type="Texture2D" uid="uid://cmesdthj6epe1" path="res://Images/SKRI-3.png" id="5_msly6"]
+[ext_resource type="Texture2D" uid="uid://dpkq61ecab5th" path="res://Images/SKRI-4.png" id="6_p1waq"]
+
+[resource]
+script = ExtResource("1_nyjhb")
+word = ""
+type = 0
+storedFaces = Array[Texture2D]([ExtResource("2_udpvr"), ExtResource("3_ak6bw"), ExtResource("4_jb0ki"), ExtResource("5_msly6"), ExtResource("6_p1waq")])
+faces = Array[Image]([null, null, null, null, null])
+maxStage = 4
+variants = PackedStringArray()
+translations = PackedStringArray()
+faceSize = Vector2i(750, 1500)
+imageFormat = 5

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PageData" load_steps=4 format=3 uid="uid://0gh74fd0cj2u"]
+
+[ext_resource type="Script" path="res://Scripts/PageData.cs" id="1_4252b"]
+[ext_resource type="Resource" uid="uid://bstl1smhkweoi" path="res://Cards/Spacer.tres" id="1_q5cx5"]
+[ext_resource type="Texture2D" uid="uid://ds2roywk7a7ev" path="res://Panels/SAMPLE-BOOK-PANEL-16.png" id="2_o2vwi"]
+
+[resource]
+script = ExtResource("1_4252b")
+cards = Array[Object]([ExtResource("1_q5cx5")])
+panel = ExtResource("2_o2vwi")
