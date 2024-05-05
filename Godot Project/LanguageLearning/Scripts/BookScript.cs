@@ -17,6 +17,9 @@ public partial class BookScript : Node
 	public PageScript nextPage;
 
 	const float pageDistance = 10.0f;
+	const float pageCooldown = .5f;
+
+	public float pageCooldownTimer;
 
 	
 	Random randomTester;
@@ -38,6 +41,7 @@ public partial class BookScript : Node
 		currentPage = (PageScript)basePage.Instantiate();
 		currentPage.data = pages[currentPageNumber];
 
+		pageCooldownTimer -= 0f;
 
 		AddChild(currentPage);
 
@@ -46,7 +50,12 @@ public partial class BookScript : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (pageCooldownTimer > 0)
+		{
+			pageCooldownTimer -= (float)delta;
+		}
 
+		/*
 		if(randomTester.Next(0,1000) > 998)
 		{
 			currentPage.SpinPage(1);
@@ -63,11 +72,17 @@ public partial class BookScript : Node
 		{
 			TurnPage(-1);
 		}
+		*/
 
 	}
 
 	public void TurnPage(int direction)
 	{
+		if(pageCooldownTimer > 0)
+		{
+			return;
+		}
+
 		if(direction != 0 && currentPageNumber+ direction >= 0 && currentPageNumber+ direction < pages.Length)
 		{
 			if(nextPage!=null)
@@ -88,9 +103,57 @@ public partial class BookScript : Node
 			PageScript temp = currentPage;
 			currentPage = nextPage;
 			nextPage = temp;
+			pageCooldownTimer = pageCooldown;
 
 		}
 		
+	}
+
+	public override void _UnhandledInput(InputEvent eventName)
+	{
+		
+		bool spinUp = false;
+		bool spinDown = false;
+		bool turnLeft = false;
+		bool turnRight = false;
+
+		if(eventName.IsAction("up"))
+		{
+			spinUp = true;
+		}
+		else if (eventName.IsAction("down"))
+		{
+			spinDown = true;
+		}
+		else if (eventName.IsAction("left"))
+		{
+			turnLeft = true;
+		}
+		else if(eventName.IsAction("right"))
+		{
+			turnRight = true;
+		}
+
+
+
+
+		if(spinUp)
+		{
+			currentPage.SpinPage(1);
+		}
+		else if(spinDown)
+		{
+			currentPage.SpinPage(-1);
+		}
+		else if(turnLeft)
+		{
+			TurnPage(-1);
+		}
+		else if(turnRight)
+		{
+			TurnPage(1);
+		}
+
 	}
 
 }

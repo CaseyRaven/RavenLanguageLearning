@@ -27,6 +27,7 @@ public partial class PageScript : Node3D
 
 	public CardScript[] cards;
 
+	public const float spinCooldown = .5f;
 	public float spinTimer = 0;
 
 	//Image File
@@ -84,9 +85,10 @@ public partial class PageScript : Node3D
 			cards[i].source = data.cards[i];
 			cards[i].currentDifficulty = stage; // Some weirdness with max difficulty defined below
 			AddChild(cards[i]);
+			maxStage = Math.Max(maxStage, cards[i].maxDifficulty);
 		}
 
-		maxStage = cards[0].maxDifficulty;
+		//maxStage = cards[0].maxDifficulty;
 
 		AdjustSize();
 
@@ -235,7 +237,7 @@ public partial class PageScript : Node3D
 			{
 				target.Spin(direction);
 			}
-			spinTimer = 2.5f;
+			spinTimer = spinCooldown;
 
 			stage+=direction;
 		}
