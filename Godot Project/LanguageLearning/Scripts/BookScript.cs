@@ -18,6 +18,11 @@ public partial class BookScript : Node
 
 	const float pageDistance = 10.0f;
 	const float pageCooldown = .5f;
+	const float swipeThreshold = 100f;
+
+
+	float swipeStart = -1.0f;
+	float swipeVerticalStart = -1.0f;
 
 	public float pageCooldownTimer;
 
@@ -135,7 +140,47 @@ public partial class BookScript : Node
 		}
 
 
+		if (eventName is InputEventScreenTouch)
+		{
+			float distance;
+			if (((InputEventScreenTouch)eventName).Pressed)
+				{
+					swipeStart = ((InputEventScreenTouch)eventName).Position.X;
+					swipeVerticalStart = ((InputEventScreenTouch)eventName).Position.Y;
+				}
+			else
+			{
+				if(swipeStart >= 0)
+				{
+					distance = ((InputEventScreenTouch)eventName).Position.X -swipeStart;
+					if(Math.Abs(distance) > swipeThreshold)
+					{
+						if(distance > 0)
+						{
+							turnRight = true;
+						}
+						else
+						{
+							turnLeft = true;
+						}
+					}
+					distance = ((InputEventScreenTouch)eventName).Position.Y -swipeVerticalStart;
+					if(Math.Abs(distance) > swipeThreshold)
+					{
+						if(distance > 0)
+						{
+							spinUp = true;
+						}
+						else
+						{
+							spinDown = true;
+						}
+					}
+				}
 
+
+			}
+		}
 
 		if(spinUp)
 		{
@@ -155,5 +200,6 @@ public partial class BookScript : Node
 		}
 
 	}
+
 
 }
