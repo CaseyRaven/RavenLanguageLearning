@@ -16,7 +16,7 @@ public partial class BookScript : Node
 
 	public PageScript nextPage;
 
-	const float pageDistance = 10.0f;
+	const float pageDistance = 15.0f;
 	const float pageCooldown = .5f;
 	const float swipeThreshold = 100f;
 
@@ -155,7 +155,7 @@ public partial class BookScript : Node
 					distance = ((InputEventScreenTouch)eventName).Position.X -swipeStart;
 					if(Math.Abs(distance) > swipeThreshold)
 					{
-						if(distance > 0)
+						if(distance < 0)
 						{
 							turnRight = true;
 						}
@@ -197,6 +197,12 @@ public partial class BookScript : Node
 		else if(turnRight)
 		{
 			TurnPage(1);
+		}
+
+
+		if(eventName.IsAction("exit"))
+		{
+			GetTree().Quit();
 		}
 
 	}
