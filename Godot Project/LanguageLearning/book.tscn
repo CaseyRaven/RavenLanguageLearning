@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://df6liimms4ggy"]
+
+[ext_resource type="Script" path="res://Scripts/BookScript.cs" id="1_2edqt"]
+[ext_resource type="Resource" uid="uid://cu08tjtofyg5t" path="res://Books/SampleBook.tres" id="2_60bcn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fnu2n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ct2r"]
+albedo_color = Color(0.0627451, 0.568627, 0.576471, 1)
+
+[node name="Book" type="Node3D"]
+script = ExtResource("1_2edqt")
+pageSource = ExtResource("2_60bcn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+fov = 73.2956
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.853596, -0.429805, 0.294349, 0.182282, 0.775752, 0.604137, -0.488003, -0.462035, 0.740525, 0, 2.82932, 2.19529)
+light_energy = 0.5
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.853596, -0.429805, 0.294349, 0.500248, 0.833955, -0.232962, -0.145345, 0.346103, 0.92687, 0, 0, 2.19529)
+light_energy = 0.5
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, -100, 0, 100, -4.37114e-06, 0, 0, -30)
+mesh = SubResource("PlaneMesh_fnu2n")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ct2r")

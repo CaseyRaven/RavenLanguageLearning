@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://cpuu2ej2iu4b2"]
+
+[ext_resource type="Script" path="res://Scripts/CardData.cs" id="1_t82e2"]
+[ext_resource type="Texture2D" uid="uid://bdeo3df4d1qge" path="res://Images/TOOPLONTE-0.png" id="2_rcc0r"]
+[ext_resource type="Texture2D" uid="uid://6p6w6n3fy6nh" path="res://Images/TOOPLONTE-1.png" id="3_u1qny"]
+[ext_resource type="Texture2D" uid="uid://dq02o2w5ro34" path="res://Images/TOOPLONTE-2.png" id="4_vrvxl"]
+[ext_resource type="Texture2D" uid="uid://bdmw0lg82jc75" path="res://Images/TOOPLONTE-3.png" id="5_xj2fp"]
+[ext_resource type="Texture2D" uid="uid://c8w1vv1uey3rq" path="res://Images/TOOPLONTE-4.png" id="6_o5fvv"]
+
+[resource]
+script = ExtResource("1_t82e2")
+word = ""
+type = 0
+storedFaces = Array[Texture2D]([ExtResource("2_rcc0r"), ExtResource("3_u1qny"), ExtResource("4_vrvxl"), ExtResource("5_xj2fp"), ExtResource("6_o5fvv")])
+faces = Array[Image]([null, null, null, null, null])
+maxStage = 4
+variants = PackedStringArray()
+translations = PackedStringArray()
+faceSize = Vector2i(750, 1500)
+imageFormat = 5
+locked = false

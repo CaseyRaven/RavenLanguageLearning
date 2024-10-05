@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PageData" load_steps=8 format=3 uid="uid://dsdqni3utq4vt"]
+
+[ext_resource type="Resource" uid="uid://cvfpymcr8wdic" path="res://Cards/Name.tres" id="1_rtjxe"]
+[ext_resource type="Script" path="res://Scripts/PageData.cs" id="1_t1jyu"]
+[ext_resource type="Resource" uid="uid://28o70nkaebfy" path="res://Cards/MONTUP.tres" id="2_nti6r"]
+[ext_resource type="Resource" uid="uid://bstl1smhkweoi" path="res://Cards/Spacer.tres" id="3_pnd34"]
+[ext_resource type="Resource" uid="uid://d31qvqa7xyck7" path="res://Cards/BAKAN.tres" id="4_g74k7"]
+[ext_resource type="Resource" uid="uid://cpuu2ej2iu4b2" path="res://Cards/TOOPLONTE.tres" id="5_mj0fh"]
+[ext_resource type="Texture2D" uid="uid://ce40kwpxexavh" path="res://Panels/SAMPLE-BOOK-PANEL-4.png" id="6_a5x3v"]
+
+[resource]
+script = ExtResource("1_t1jyu")
+cards = Array[Object]([ExtResource("1_rtjxe"), ExtResource("2_nti6r"), ExtResource("3_pnd34"), ExtResource("4_g74k7"), ExtResource("5_mj0fh"), ExtResource("2_nti6r")])
+panel = ExtResource("6_a5x3v")
+names = PackedStringArray("Binkey")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://crl1taniwwl47"]
+
+[ext_resource type="Script" path="res://Scripts/CardData.cs" id="1_e45o1"]
+
+[resource]
+script = ExtResource("1_e45o1")
+word = "I-AM"
+type = 0
+storedFaces = null
+faces = Array[Image]([null, null, null, null, null])
+maxStage = 4
+variants = PackedStringArray()
+translations = PackedStringArray()
+faceSize = Vector2i(772, 1486)
+imageFormat = 4
