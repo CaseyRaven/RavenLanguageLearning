@@ -8,7 +8,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ct2r"]
 albedo_color = Color(0.0627451, 0.568627, 0.576471, 1)
 
-[node name="Book" type="Node"]
+[node name="Book" type="Node3D"]
 script = ExtResource("1_2edqt")
 pageSource = ExtResource("2_60bcn")
 

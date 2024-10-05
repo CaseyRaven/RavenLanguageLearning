@@ -12,4 +12,7 @@ public partial class PageData : Resource
     [Export]
     public Texture2D panel;
 
+    [Export]
+    public string[] names;// These are assigned in order to name cards in the page, to get around shared resources
+
 }

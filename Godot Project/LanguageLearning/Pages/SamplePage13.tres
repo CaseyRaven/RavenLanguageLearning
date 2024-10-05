@@ -9,3 +9,4 @@
 script = ExtResource("1_3q0y3")
 cards = Array[Object]([ExtResource("1_b1ne2"), ExtResource("2_81dv6")])
 panel = ExtResource("3_kgpy3")
+names = PackedStringArray()

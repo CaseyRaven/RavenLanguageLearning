@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class BookScript : Node
+public partial class BookScript : Node3D
 {
 	
 	[Export]
@@ -175,6 +175,37 @@ public partial class BookScript : Node
 						{
 							spinDown = true;
 						}
+					}
+					if(((InputEventScreenTouch)eventName).Position.Y -swipeVerticalStart <= swipeThreshold && 
+						((InputEventScreenTouch)eventName).Position.X -swipeStart <= swipeThreshold)
+					{
+						Vector3 cameraOrigin = ((Camera3D)GetNode("Camera3D")).ProjectRayOrigin (((InputEventScreenTouch)eventName).Position);
+						Vector3 targetRay = ((Camera3D)GetNode("Camera3D")).ProjectLocalRayNormal (((InputEventScreenTouch)eventName).Position);
+						Vector3 fromPoint = cameraOrigin + targetRay;
+						Vector3 toPoint = targetRay * 100.0f;
+						GD.Print("Raycast: " + fromPoint + ", " + toPoint);
+						var spaceState = GetWorld3D().DirectSpaceState;
+						// use global coordinates, not local to node
+						var query = PhysicsRayQueryParameters3D.Create(fromPoint, toPoint);
+						var result = spaceState.IntersectRay(query);
+						foreach( var (key, collider)/*var (collider, collider_id, normal, position, face_index, rid, shape)*/ in result)
+						{
+							if((((Node)result["collider"]).GetParent()) is CardScript)
+							{
+								((CardScript)((Node)(result["collider"])).GetParent()).ToggleLock();
+								break;
+							}
+							//GD.Print(((CardScript)((Node)(result["collider"])).GetParent()).Name);
+						}
+						/*
+						if(!((Godot.Collections.Dictionary)result).size()==0)
+						{
+							GD.Print("Raycast empty");
+						}
+						else
+						{
+							GD.Print(((Node)((Node)result["collider"]).GetParent()).Name);
+						}*/
 					}
 				}
 

@@ -24,11 +24,14 @@ public partial class CardScript : Node3D
 	public int currentDifficulty;
 	public int maxDifficulty;
 
+	public int goalDifficulty;
 	public float targetRotation = 0;
 
 	public int cardType; // 0 is standard, 1 is name, 2 is a spacer
 
 	public bool isSpinning;
+
+	//bool unlocking;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -90,6 +93,14 @@ public partial class CardScript : Node3D
 		else
 		{
 			GetNode<Node3D>("Box").Hide();
+		}
+
+		if(!source.locked)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				GetNode<Label3D>("Lock" + i).Hide();
+			}
 		}
 
 		if((source.storedFaces == null || source.storedFaces.Length > 0) && source.faces !=null && source.faces.Length > 0 && source.faces[0] == null)
@@ -209,6 +220,18 @@ public partial class CardScript : Node3D
 	}
 
 
+
+	public void RequestSpin(int direction)
+	{
+		goalDifficulty += direction;
+		goalDifficulty = Math.Max(0, Math.Min(maxDifficulty, goalDifficulty));
+		if(!source.locked)
+		{
+			Spin(direction);
+		}
+
+	}
+
 	public void Spin(int direction)
 	{
 
@@ -225,6 +248,7 @@ public partial class CardScript : Node3D
 			targetRotation += (float)Math.PI / 2.0f;
 
 			currentDifficulty++;
+			source.currentDifficulty = currentDifficulty;
 
 			/*
 			int temp = faceNumbers[1];
@@ -246,7 +270,7 @@ public partial class CardScript : Node3D
 			targetRotation -= (float)Math.PI / 2.0f;
 
 			currentDifficulty--;
-
+			source.currentDifficulty = currentDifficulty;
 			/*
 			int temp = faceNumbers[3];
 			faceNumbers[3] = faceNumbers[2];
@@ -304,7 +328,18 @@ public partial class CardScript : Node3D
 		
 		//GlobalRotationDegrees = new Vector3(GlobalRotationDegrees[0] - (float)delta * ROTATION_SPEED, 0, 0);
 
-
+		if (source.unlocking && !isSpinning)
+		{
+			if(currentDifficulty == goalDifficulty)
+			{
+				source.unlocking = false;
+				source.locked = false;
+			}
+			else
+			{
+				Spin(goalDifficulty - currentDifficulty);
+			}
+		}
 		/*
 		if(randomTester.Next(0,1000) > 998)
 		{
@@ -319,5 +354,38 @@ public partial class CardScript : Node3D
 		//RotateY((float) delta * 0);
 		//RotateX((float) delta * 5);
 
+	}
+
+	public void ToggleLock()
+	{
+		if(source.locked)
+		{
+			Unlock();
+		}
+		else
+		{
+			Lock();
+		}
+	}
+
+	public void Lock()
+	{
+		source.locked = true;
+		for (int i = 0; i < 4; i++)
+			{
+				GetNode<Label3D>("Lock" + i).Show();
+			}
+		
+	}
+
+	public void Unlock()
+	{
+		//source.locked = false;
+		//goalDifficulty = goal;
+		source.unlocking = true;
+		for (int i = 0; i < 4; i++)
+		{
+			GetNode<Label3D>("Lock" + i).Hide();
+		}
 	}
 }

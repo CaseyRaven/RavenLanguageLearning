@@ -23,4 +23,10 @@ public partial class CardData : Resource
     public Vector2I faceSize;
     [Export]
     public int imageFormat = 5;// 4 is rgb8, 5 is rgba8
+    [Export]
+    public bool locked;
+    [Export]
+    public bool unlocking;
+    [Export]
+    public int currentDifficulty;
 }

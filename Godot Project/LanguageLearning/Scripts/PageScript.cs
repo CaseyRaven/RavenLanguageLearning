@@ -71,6 +71,8 @@ public partial class PageScript : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		int nameCount = 0;
+
 		pageScene = data.panel;
 		
 		GetNode<TextureRect>("./AspectRatioContainer/TextureRect").Texture = pageScene;
@@ -83,9 +85,17 @@ public partial class PageScript : Node3D
 		{
 			cards[i] = (CardScript)baseCard.Instantiate();
 			cards[i].source = data.cards[i];
-			cards[i].currentDifficulty = stage; // Some weirdness with max difficulty defined below
+			if(!data.cards[i].locked)
+				cards[i].currentDifficulty = stage; // Some weirdness with max difficulty defined below
+			else
+				cards[i].currentDifficulty = data.cards[i].currentDifficulty;
+			if(cards[i].source.type == 1 && data.names != null && nameCount < data.names.Length)
+			{
+				cards[i].source.word = data.names[nameCount++];
+			}
 			AddChild(cards[i]);
 			maxStage = Math.Max(maxStage, cards[i].maxDifficulty);
+
 		}
 
 		//maxStage = cards[0].maxDifficulty;
@@ -235,7 +245,7 @@ public partial class PageScript : Node3D
 		{
 			foreach(CardScript target in cards)
 			{
-				target.Spin(direction);
+				target.RequestSpin(direction);
 			}
 			spinTimer = spinCooldown;
 

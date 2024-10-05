@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_k3rly")
-word = "Binkey"
+word = ""
 type = 1
 storedFaces = null
 faces = null
@@ -14,3 +14,4 @@ variants = PackedStringArray()
 translations = PackedStringArray()
 faceSize = Vector2i(0, 0)
 imageFormat = 5
+locked = false

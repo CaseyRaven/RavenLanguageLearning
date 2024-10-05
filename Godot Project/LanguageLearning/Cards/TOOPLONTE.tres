@@ -18,3 +18,4 @@ variants = PackedStringArray()
 translations = PackedStringArray()
 faceSize = Vector2i(750, 1500)
 imageFormat = 5
+locked = false
